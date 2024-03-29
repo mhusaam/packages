@@ -92,6 +92,8 @@ define Package/vsftpd/install
 	$(INSTALL_CONF) ./files/$(PKG_NAME).conf $(1)/etc/$(PKG_NAME).conf
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/$(PKG_NAME).init $(1)/etc/init.d/$(PKG_NAME)
+	$(INSTALL_DIR) $(1)/etc/config
+	$(INSTALL_BIN) ./files/$(PKG_NAME).uci $(1)/etc/config/$(PKG_NAME)
 	$(INSTALL_DIR) $(1)/etc/vsftpd
 endef
 
